@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		224234851C73E84B000385C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 224234841C73E84B000385C1 /* main.m */; };
+		224234881C73E84B000385C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 224234871C73E84B000385C1 /* AppDelegate.m */; };
+		2242348B1C73E84B000385C1 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2242348A1C73E84B000385C1 /* GameScene.m */; };
+		2242348D1C73E84B000385C1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2242348C1C73E84B000385C1 /* GameScene.sks */; };
+		224234901C73E84B000385C1 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2242348F1C73E84B000385C1 /* GameViewController.m */; };
+		224234931C73E84C000385C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224234911C73E84C000385C1 /* Main.storyboard */; };
+		224234951C73E84C000385C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224234941C73E84C000385C1 /* Assets.xcassets */; };
+		224234981C73E84C000385C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224234961C73E84C000385C1 /* LaunchScreen.storyboard */; };
+		224234A31C73E84C000385C1 /* p04_redbandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 224234A21C73E84C000385C1 /* p04_redbandTests.m */; };
+		224234AE1C73E84C000385C1 /* p04_redbandUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 224234AD1C73E84C000385C1 /* p04_redbandUITests.m */; };
+		2259BF471C7A6830004DF9F4 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 2259BF461C7A6830004DF9F4 /* images */; };
+		2259BFBA1C7ADE34004DF9F4 /* laser_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2259BFB91C7ADE34004DF9F4 /* laser_sound.mp3 */; };
+		91468F681C7A2A1D0022C1C3 /* CollidableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 91468F671C7A2A1D0022C1C3 /* CollidableObject.m */; };
+		91468F6B1C7A39C00022C1C3 /* ShipObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 91468F6A1C7A39C00022C1C3 /* ShipObject.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2242349F1C73E84C000385C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 224234781C73E84B000385C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2242347F1C73E84B000385C1;
+			remoteInfo = "p04-redband";
+		};
+		224234AA1C73E84C000385C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 224234781C73E84B000385C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2242347F1C73E84B000385C1;
+			remoteInfo = "p04-redband";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		224234801C73E84B000385C1 /* p04-redband.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "p04-redband.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		224234841C73E84B000385C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		224234861C73E84B000385C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		224234871C73E84B000385C1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		224234891C73E84B000385C1 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		2242348A1C73E84B000385C1 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		2242348C1C73E84B000385C1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		2242348E1C73E84B000385C1 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		2242348F1C73E84B000385C1 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		224234921C73E84C000385C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		224234941C73E84C000385C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		224234971C73E84C000385C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		224234991C73E84C000385C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2242349E1C73E84C000385C1 /* p04-redbandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "p04-redbandTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		224234A21C73E84C000385C1 /* p04_redbandTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = p04_redbandTests.m; sourceTree = "<group>"; };
+		224234A41C73E84C000385C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		224234A91C73E84C000385C1 /* p04-redbandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "p04-redbandUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		224234AD1C73E84C000385C1 /* p04_redbandUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = p04_redbandUITests.m; sourceTree = "<group>"; };
+		224234AF1C73E84C000385C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2259BF461C7A6830004DF9F4 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		2259BFB91C7ADE34004DF9F4 /* laser_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = laser_sound.mp3; path = images/laser_sound.mp3; sourceTree = "<group>"; };
+		91468F661C7A2A000022C1C3 /* CollidableObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollidableObject.h; sourceTree = "<group>"; };
+		91468F671C7A2A1D0022C1C3 /* CollidableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollidableObject.m; sourceTree = "<group>"; };
+		91468F691C7A396D0022C1C3 /* ShipObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipObject.h; sourceTree = "<group>"; };
+		91468F6A1C7A39C00022C1C3 /* ShipObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipObject.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2242347D1C73E84B000385C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2242349B1C73E84C000385C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		224234A61C73E84C000385C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		224234771C73E84B000385C1 = {
+			isa = PBXGroup;
+			children = (
+				224234821C73E84B000385C1 /* p04-redband */,
+				224234A11C73E84C000385C1 /* p04-redbandTests */,
+				224234AC1C73E84C000385C1 /* p04-redbandUITests */,
+				224234811C73E84B000385C1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		224234811C73E84B000385C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				224234801C73E84B000385C1 /* p04-redband.app */,
+				2242349E1C73E84C000385C1 /* p04-redbandTests.xctest */,
+				224234A91C73E84C000385C1 /* p04-redbandUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		224234821C73E84B000385C1 /* p04-redband */ = {
+			isa = PBXGroup;
+			children = (
+				2259BFB91C7ADE34004DF9F4 /* laser_sound.mp3 */,
+				2259BF461C7A6830004DF9F4 /* images */,
+				224234861C73E84B000385C1 /* AppDelegate.h */,
+				224234871C73E84B000385C1 /* AppDelegate.m */,
+				224234891C73E84B000385C1 /* GameScene.h */,
+				2242348A1C73E84B000385C1 /* GameScene.m */,
+				2242348C1C73E84B000385C1 /* GameScene.sks */,
+				2242348E1C73E84B000385C1 /* GameViewController.h */,
+				2242348F1C73E84B000385C1 /* GameViewController.m */,
+				91468F661C7A2A000022C1C3 /* CollidableObject.h */,
+				91468F671C7A2A1D0022C1C3 /* CollidableObject.m */,
+				91468F691C7A396D0022C1C3 /* ShipObject.h */,
+				91468F6A1C7A39C00022C1C3 /* ShipObject.m */,
+				224234911C73E84C000385C1 /* Main.storyboard */,
+				224234941C73E84C000385C1 /* Assets.xcassets */,
+				224234961C73E84C000385C1 /* LaunchScreen.storyboard */,
+				224234991C73E84C000385C1 /* Info.plist */,
+				224234831C73E84B000385C1 /* Supporting Files */,
+			);
+			path = "p04-redband";
+			sourceTree = "<group>";
+		};
+		224234831C73E84B000385C1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				224234841C73E84B000385C1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		224234A11C73E84C000385C1 /* p04-redbandTests */ = {
+			isa = PBXGroup;
+			children = (
+				224234A21C73E84C000385C1 /* p04_redbandTests.m */,
+				224234A41C73E84C000385C1 /* Info.plist */,
+			);
+			path = "p04-redbandTests";
+			sourceTree = "<group>";
+		};
+		224234AC1C73E84C000385C1 /* p04-redbandUITests */ = {
+			isa = PBXGroup;
+			children = (
+				224234AD1C73E84C000385C1 /* p04_redbandUITests.m */,
+				224234AF1C73E84C000385C1 /* Info.plist */,
+			);
+			path = "p04-redbandUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2242347F1C73E84B000385C1 /* p04-redband */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 224234B21C73E84C000385C1 /* Build configuration list for PBXNativeTarget "p04-redband" */;
+			buildPhases = (
+				2242347C1C73E84B000385C1 /* Sources */,
+				2242347D1C73E84B000385C1 /* Frameworks */,
+				2242347E1C73E84B000385C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "p04-redband";
+			productName = "p04-redband";
+			productReference = 224234801C73E84B000385C1 /* p04-redband.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2242349D1C73E84C000385C1 /* p04-redbandTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 224234B51C73E84C000385C1 /* Build configuration list for PBXNativeTarget "p04-redbandTests" */;
+			buildPhases = (
+				2242349A1C73E84C000385C1 /* Sources */,
+				2242349B1C73E84C000385C1 /* Frameworks */,
+				2242349C1C73E84C000385C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				224234A01C73E84C000385C1 /* PBXTargetDependency */,
+			);
+			name = "p04-redbandTests";
+			productName = "p04-redbandTests";
+			productReference = 2242349E1C73E84C000385C1 /* p04-redbandTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		224234A81C73E84C000385C1 /* p04-redbandUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 224234B81C73E84C000385C1 /* Build configuration list for PBXNativeTarget "p04-redbandUITests" */;
+			buildPhases = (
+				224234A51C73E84C000385C1 /* Sources */,
+				224234A61C73E84C000385C1 /* Frameworks */,
+				224234A71C73E84C000385C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				224234AB1C73E84C000385C1 /* PBXTargetDependency */,
+			);
+			name = "p04-redbandUITests";
+			productName = "p04-redbandUITests";
+			productReference = 224234A91C73E84C000385C1 /* p04-redbandUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		224234781C73E84B000385C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Timothy Redband";
+				TargetAttributes = {
+					2242347F1C73E84B000385C1 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 7X52CARZU3;
+					};
+					2242349D1C73E84C000385C1 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9VDZ6Y3SWA;
+						TestTargetID = 2242347F1C73E84B000385C1;
+					};
+					224234A81C73E84C000385C1 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9VDZ6Y3SWA;
+						TestTargetID = 2242347F1C73E84B000385C1;
+					};
+				};
+			};
+			buildConfigurationList = 2242347B1C73E84B000385C1 /* Build configuration list for PBXProject "p04-redband" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 224234771C73E84B000385C1;
+			productRefGroup = 224234811C73E84B000385C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2242347F1C73E84B000385C1 /* p04-redband */,
+				2242349D1C73E84C000385C1 /* p04-redbandTests */,
+				224234A81C73E84C000385C1 /* p04-redbandUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2242347E1C73E84B000385C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2259BF471C7A6830004DF9F4 /* images in Resources */,
+				2242348D1C73E84B000385C1 /* GameScene.sks in Resources */,
+				224234981C73E84C000385C1 /* LaunchScreen.storyboard in Resources */,
+				224234951C73E84C000385C1 /* Assets.xcassets in Resources */,
+				2259BFBA1C7ADE34004DF9F4 /* laser_sound.mp3 in Resources */,
+				224234931C73E84C000385C1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2242349C1C73E84C000385C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		224234A71C73E84C000385C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2242347C1C73E84B000385C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224234901C73E84B000385C1 /* GameViewController.m in Sources */,
+				224234881C73E84B000385C1 /* AppDelegate.m in Sources */,
+				2242348B1C73E84B000385C1 /* GameScene.m in Sources */,
+				91468F681C7A2A1D0022C1C3 /* CollidableObject.m in Sources */,
+				91468F6B1C7A39C00022C1C3 /* ShipObject.m in Sources */,
+				224234851C73E84B000385C1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2242349A1C73E84C000385C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224234A31C73E84C000385C1 /* p04_redbandTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		224234A51C73E84C000385C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224234AE1C73E84C000385C1 /* p04_redbandUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		224234A01C73E84C000385C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2242347F1C73E84B000385C1 /* p04-redband */;
+			targetProxy = 2242349F1C73E84C000385C1 /* PBXContainerItemProxy */;
+		};
+		224234AB1C73E84C000385C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2242347F1C73E84B000385C1 /* p04-redband */;
+			targetProxy = 224234AA1C73E84C000385C1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		224234911C73E84C000385C1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				224234921C73E84C000385C1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		224234961C73E84C000385C1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				224234971C73E84C000385C1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		224234B01C73E84C000385C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		224234B11C73E84C000385C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		224234B31C73E84C000385C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "p04-redband/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "matt-reigada-asteroids";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		224234B41C73E84C000385C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "p04-redband/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "matt-reigada-asteroids";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		224234B61C73E84C000385C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "p04-redbandTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tim.p04-redbandTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/p04-redband.app/p04-redband";
+			};
+			name = Debug;
+		};
+		224234B71C73E84C000385C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "p04-redbandTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tim.p04-redbandTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/p04-redband.app/p04-redband";
+			};
+			name = Release;
+		};
+		224234B91C73E84C000385C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "p04-redbandUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tim.p04-redbandUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "p04-redband";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		224234BA1C73E84C000385C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "p04-redbandUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tim.p04-redbandUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "p04-redband";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2242347B1C73E84B000385C1 /* Build configuration list for PBXProject "p04-redband" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224234B01C73E84C000385C1 /* Debug */,
+				224234B11C73E84C000385C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		224234B21C73E84C000385C1 /* Build configuration list for PBXNativeTarget "p04-redband" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224234B31C73E84C000385C1 /* Debug */,
+				224234B41C73E84C000385C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		224234B51C73E84C000385C1 /* Build configuration list for PBXNativeTarget "p04-redbandTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224234B61C73E84C000385C1 /* Debug */,
+				224234B71C73E84C000385C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		224234B81C73E84C000385C1 /* Build configuration list for PBXNativeTarget "p04-redbandUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224234B91C73E84C000385C1 /* Debug */,
+				224234BA1C73E84C000385C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 224234781C73E84B000385C1 /* Project object */;
+}
