@@ -21,6 +21,7 @@
 		2259BFBA1C7ADE34004DF9F4 /* laser_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2259BFB91C7ADE34004DF9F4 /* laser_sound.mp3 */; };
 		91468F681C7A2A1D0022C1C3 /* CollidableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 91468F671C7A2A1D0022C1C3 /* CollidableObject.m */; };
 		91468F6B1C7A39C00022C1C3 /* ShipObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 91468F6A1C7A39C00022C1C3 /* ShipObject.m */; };
+		91A765F21C88F9EE008F6C5F /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 91A765F11C88F9EE008F6C5F /* explosion.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		91468F671C7A2A1D0022C1C3 /* CollidableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollidableObject.m; sourceTree = "<group>"; };
 		91468F691C7A396D0022C1C3 /* ShipObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipObject.h; sourceTree = "<group>"; };
 		91468F6A1C7A39C00022C1C3 /* ShipObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipObject.m; sourceTree = "<group>"; };
+		91A765F11C88F9EE008F6C5F /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = explosion.wav; path = sounds/explosion.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				2259BFB91C7ADE34004DF9F4 /* laser_sound.mp3 */,
+				91A765F11C88F9EE008F6C5F /* explosion.wav */,
 				2259BF461C7A6830004DF9F4 /* images */,
 				224234861C73E84B000385C1 /* AppDelegate.h */,
 				224234871C73E84B000385C1 /* AppDelegate.m */,
@@ -272,6 +275,7 @@
 			files = (
 				2259BF471C7A6830004DF9F4 /* images in Resources */,
 				2242348D1C73E84B000385C1 /* GameScene.sks in Resources */,
+				91A765F21C88F9EE008F6C5F /* explosion.wav in Resources */,
 				224234981C73E84C000385C1 /* LaunchScreen.storyboard in Resources */,
 				224234951C73E84C000385C1 /* Assets.xcassets in Resources */,
 				2259BFBA1C7ADE34004DF9F4 /* laser_sound.mp3 in Resources */,

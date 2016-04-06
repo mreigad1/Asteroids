@@ -65,6 +65,7 @@ NSMutableArray *clever_labels;
     player.name = @"P";
     player.xScale = 0.1;
     player.yScale = 0.1;
+	//player.alpha = 1.0;
     player.position = myLabel.position;
     [player setZPosition:1.0];
     //
@@ -101,42 +102,62 @@ NSMutableArray *clever_labels;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
+    if(player.hidden == false){
+    	for (UITouch *touch in touches) {
+    	    CGPoint location = [touch locationInNode:self];
         
-        //actions for Laser
-        if ([LaserIcon containsPoint:location]){
-            SKSpriteNode* Laser = [SKSpriteNode spriteNodeWithImageNamed:@"laser"];
-            Laser.size = CGSizeMake(20, 15);
-            [Laser setPosition: player.position];
-            Laser.name = @"L";
-            double laserSpeed = vel;
-            SKAction* frst =
-            [SKAction repeatAction:[SKAction moveByX:velVec.dx*laserSpeed y:velVec.dy*laserSpeed duration: 0.5] count: 5];
-            SKAction* act = [SKAction sequence:@[frst, [SKAction removeFromParent]]];
-            [Laser runAction:[SKAction repeatAction:act count:1]];
-            SKAction* rot = [SKAction rotateToAngle:shipAngle - (M_PI / 2) duration:0];
-            [Laser runAction:rot];
-            [Lasers addObject:Laser];
-            [self addChild:Laser];
-            [self runAction:[SKAction playSoundFileNamed:@"laser_sound.mp3" waitForCompletion:YES]];
-        }else{
-            //trig logic for ship velocity
-            velVec.dx = location.x - player.position.x;
-            velVec.dy = location.y - player.position.y;
-            double hyp = sqrt(velVec.dx*velVec.dx + velVec.dy*velVec.dy);
-            velVec.dx = (vel*velVec.dx) / hyp;
-            velVec.dy = (vel*velVec.dy) / hyp;
-            SKAction* act = [SKAction moveBy:velVec duration:3.0];
-            [player runAction:[SKAction repeatAction:act count:1]];
-            //trig logic for ship angle
-            shipAngle = atan(velVec.dy / velVec.dx) - (M_PI / 2);
-            if(velVec.dx < 0){
-                shipAngle += M_PI;
-            }
-            [player runAction:[SKAction rotateToAngle: shipAngle duration: 1]];}
-    }
+    	    //actions for Laser
+    	    if ([LaserIcon containsPoint:location]){
+    	        SKSpriteNode* Laser = [SKSpriteNode spriteNodeWithImageNamed:@"laser"];
+    	        Laser.size = CGSizeMake(20, 15);
+    	        [Laser setPosition: player.position];
+				Laser.name = @"L";
+				double laserSpeed = vel;
+				//double xcomp = velVec.dx;
+				//double ycomp = velVec.dy;
+				double lasRot = player.zRotation;
+				double xcomp = -vel*sin(lasRot);
+				double ycomp = vel*cos(lasRot);
+				SKAction* frst =
+					[SKAction
+						repeatAction:[SKAction
+							moveByX:xcomp*laserSpeed y:ycomp*laserSpeed duration: 0.5
+						]
+						count: 5
+					];
+            	SKAction* act = [SKAction sequence:@[frst, [SKAction removeFromParent]]];
+	            [Laser runAction:[SKAction repeatAction:act count:1]];
+				SKAction* rot = [SKAction rotateToAngle:lasRot - (M_PI / 2) duration:0];
+				[Laser runAction:rot];
+				[Lasers addObject:Laser];
+				[self addChild:Laser];
+				[self runAction:[SKAction playSoundFileNamed:@"laser_sound.mp3" waitForCompletion:YES]];
+			}else{
+				//trig logic for ship velocity
+				velVec.dx = location.x - player.position.x;
+				velVec.dy = location.y - player.position.y;
+				double hyp = sqrt(velVec.dx*velVec.dx + velVec.dy*velVec.dy);
+				velVec.dx = (vel*velVec.dx) / hyp;
+				velVec.dy = (vel*velVec.dy) / hyp;
+				SKAction* act = [SKAction moveBy:velVec duration:3.0];
+				[player runAction:[SKAction repeatAction:act count:1]];
+				//trig logic for ship angle
+				shipAngle = atan(velVec.dy / velVec.dx) - (M_PI / 2);
+				if(velVec.dx < 0){
+					shipAngle += M_PI;
+				}
+				double delta = (shipAngle - player.zRotation);
+				while(delta > M_PI){
+					delta -= (2 * M_PI);
+				}
+				while(delta < -M_PI){
+					delta += (2 * M_PI);
+				}
+				delta += player.zRotation;
+				[player runAction:[SKAction rotateToAngle: delta duration: 1]];
+			}
+		}
+	}
 }
 
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -216,6 +237,8 @@ NSMutableArray *clever_labels;
 
 //pulled from monster demo
 -(void)update:(NSTimeInterval)currentTime {
+	//TODO: change and rename asset for explosion sounds
+	NSString *explosionSound = @"explosion.wav";
     CFTimeInterval timeSinceLast = currentTime - self.lastUpdateTimeInterval;
     self.lastUpdateTimeInterval = currentTime;
     if (timeSinceLast > 1) { // more than a second since last update
@@ -227,7 +250,7 @@ NSMutableArray *clever_labels;
         NSArray* nodes = [self nodesAtPoint:L.position];
         BOOL collision = false;
         for(SKSpriteNode *S in nodes){
-            if([S.name isEqualToString:@"A"]){	//if asteroid under laser then delete asteroid
+            if([S.name isEqualToString:@"A"]|| [S.name isEqualToString:@"a"]){	//if asteroid under laser then delete asteroid
                 [S runAction:[SKAction removeFromParent]];
                 collision = true;
                 SKSpriteNode *exSprite = [SKSpriteNode spriteNodeWithImageNamed:@"explosions_15.png"];
@@ -242,6 +265,9 @@ NSMutableArray *clever_labels;
         }
         if(collision || false == [bgImage containsPoint:L.position]){	//if laser offscreen or collided, then remove
 			[removeList addObject:L];
+			if(collision){
+				[self runAction:[SKAction playSoundFileNamed:explosionSound waitForCompletion:YES]];
+			}
         }
     }
 	for (SKSpriteNode* L in removeList){
@@ -250,23 +276,36 @@ NSMutableArray *clever_labels;
 	}
 	removeList = NULL;	//drop array to avoid memory retention, garbage collection will pick it up
 	
-    NSArray *asteroid_nodes = [self nodesAtPoint:player.position];
-    for(SKSpriteNode *S in asteroid_nodes){
-        if([S.name isEqualToString:@"A"] || [S.name isEqualToString:@"a"]){
-            SKSpriteNode *exSprite = [SKSpriteNode spriteNodeWithImageNamed:@"explosions_15.png"];
-            exSprite.position = player.position;
-            [self addChild:exSprite];
-            SKAction *exAnimation = [SKAction animateWithTextures:explosion_array timePerFrame:0.2];
-            [exSprite runAction:exAnimation completion:^{
-                [exSprite removeFromParent];
-            }];
-            [player setPosition:CGPointMake(self.frame.size.width / 2, self.frame.size.height /2)];
-            //int rand_text_index = rand() % clever_labels.count;
-            //myLabel.text = clever_labels[rand_text_index];
-            //[Lasers removeAllObjects];
-            break;
-        }
-    }
+	if(player.isHidden == false){
+    	NSArray *asteroid_nodes = [self nodesAtPoint:player.position];
+    	for(SKSpriteNode *S in asteroid_nodes){
+    	    if([S.name isEqualToString:@"A"] || [S.name isEqualToString:@"a"]){
+    	        SKSpriteNode *exSprite = [SKSpriteNode spriteNodeWithImageNamed:@"explosions_15.png"];
+				[self runAction:[SKAction playSoundFileNamed:explosionSound waitForCompletion:YES]];
+				exSprite.position = player.position;
+				[self addChild:exSprite];
+				SKAction *exAnimation = [SKAction animateWithTextures:explosion_array timePerFrame:0.2];
+				[exSprite runAction:exAnimation completion:^{
+					[exSprite removeFromParent];
+				}];
+				
+				SKAction* invisible = [SKAction runBlock:^{ [player setHidden:true]; }];
+				SKAction* wait = [SKAction waitForDuration:(3.0)];
+				SKAction* visible = [
+					SKAction runBlock:^{
+						[player setHidden:false];
+						[player setPosition:CGPointMake(self.frame.size.width / 2, self.frame.size.height /2)];
+					}
+				];
+				
+			    [player runAction:[SKAction sequence:@[invisible, wait, visible]]];
+            	//int rand_text_index = rand() % clever_labels.count;
+            	//myLabel.text = clever_labels[rand_text_index];
+				break;
+			}
+    	}
+		asteroid_nodes = NULL;
+	}
 
     [self updateWithTimeSinceLastUpdate:timeSinceLast];
     
